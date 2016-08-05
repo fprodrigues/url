@@ -1,0 +1,49 @@
+
+<div class="container">
+
+<% flash.each do |name, msg|%>
+		<div class='alert alert-<%="#{name}%>'>
+		<a href='#' class='close' data-dismiss='alert'>&#215;</a>
+		<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+		</div>
+<% end %>
+
+<div class="jumbotron">
+  <h1 style="text-align:center"> Hello, Sirs!</h1>
+</div>
+
+
+
+<div style="text-align:center">
+<%= render partial:"new", :action => "new" %>
+</div>
+
+<div class="col-md-16"><br></div>
+<br>
+<br>
+<br>
+<hr>
+
+<h1 style="text-align:center"> Listing Urls </h1>
+
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th> <strong> title </strong> </th>
+			<th> <strong> url </strong></th>
+			<th colspan="3"></th>
+		</tr>
+		</thead>
+		<tbody>
+		<% @pages.each do |page| %>
+			<tr>  
+			<td> <%= page.title %> </td>
+			<td> <%= page.link %> </td>
+			<td> <%= link_to "Show", [ page], :class =>"btn btn-info" %> </td>
+			<td> <%= link_to "Destroy", [ page],:class=>"btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %> </td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+</div>

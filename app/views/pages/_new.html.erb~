@@ -1,0 +1,11 @@
+<div class="col-md-6">
+<%= form_for @page do |f| %>
+<%= f.label :link, "New url" %>
+<br>
+<%= f.text_field :link %>
+<br>
+<%= f.submit "Create", class: "btn btn-primary link" %>
+<% end %>
+</div>
+
+

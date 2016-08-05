@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div class="panel panel-primary">
+      <div class="panel-heading">
+      
+
+ <h1> <strong> Name of page: </strong> <%= @page.title %> </h1>
+ <h2> <em> <b> url: </b> <%= @page.link %> </em></h2>
+ <%= link_to 'Back', root_path, :class =>"btn btn-info" %>
+</div>
+
+<div class="panel-body">
+        <% if @page.h1.present? %> 
+	<h3 style="text-align:center">H1 elements in page</h3>
+	<% else %>
+	<% end %>
+	<% @page.h1.each do |a| %>
+	<%= a %>
+	<br>
+	<% end %>
+        <% if @page.h2.present? %> 
+	<h3 style="text-align:center"> H2 elements in page</h3>
+        <% else %>
+	<% end %>
+	<% @page.h2.each do |a| %>
+	<%= a %>
+	<br>
+	<% end %>
+
+
+	<% if @page.h3.present? %> 
+	<h3 style="text-align:center"> H3 elements in page</h3>
+	<% else %>
+	<% end %>
+	<% @page.h3.each do |a| %>
+	<%= a %>
+	<br>
+	<% end %>
+
+	<% if @page.a.present? %> 
+	<h3 style="text-align:center"> Links in page</h3>
+	<% else %>
+	<% end %>
+	<div class="col-lg-6">
+	<% @page.a.each do |a| %>
+	 <%= a %> 
+	<br>
+	<% end %>
+	</div>
+
+	<div class="col-lg-6">
+	<% @page.href.each do |a| %>
+	 <%= a %>
+	<br>
+	<% end %>
+	</div>
+
+</div>
+</div>
+
+</div>
